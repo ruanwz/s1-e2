@@ -1,0 +1,23 @@
+<h1>Listing repository_types</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @repository_types.each do |repository_type| %>
+  <tr>
+    <td><%= repository_type.name %></td>
+    <td><%= link_to 'Show', repository_type %></td>
+    <td><%= link_to 'Edit', edit_repository_type_path(repository_type) %></td>
+    <td><%= link_to 'Destroy', repository_type, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Repository type', new_repository_type_path %>

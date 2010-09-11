@@ -1,4 +1,8 @@
 GithubAchievement::Application.routes.draw do
+  resources :repository_types
+
+  resources :repositories
+
   resources :users
 
   # The priority is based upon order of creation:

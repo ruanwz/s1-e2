@@ -10,6 +10,9 @@ module NavigationHelpers
 
     when /the home\s?page/
       '/'
+    when /the new repository page/
+      new_repository_path
+
     when /the new user page/
       new_user_path
 
