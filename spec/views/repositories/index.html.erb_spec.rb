@@ -6,13 +6,13 @@ describe "repositories/index.html.erb" do
       stub_model(Repository,
         :name => "",
         :user_id => "",
-        :type => "",
+        :type_id => "",
         :fork_by => ""
       ),
       stub_model(Repository,
         :name => "",
         :user_id => "",
-        :type => "",
+        :type_id => "",
         :fork_by => ""
       )
     ])

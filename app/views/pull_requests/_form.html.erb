@@ -1,0 +1,37 @@
+<%= form_for(@pull_request) do |f| %>
+  <% if @pull_request.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pull_request.errors.count, "error") %> prohibited this pull_request from being saved:</h2>
+
+      <ul>
+      <% @pull_request.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_field :content %>
+  </div>
+  <div class="field">
+    <%= f.label :source_repository_id %><br />
+    <%= f.text_field :source_repository_id %>
+  </div>
+  <div class="field">
+    <%= f.label :target_repository_id %><br />
+    <%= f.text_field :target_repository_id %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :created_at %><br />
+    <%= f.datetime_select :created_at %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

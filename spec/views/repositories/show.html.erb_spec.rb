@@ -5,7 +5,7 @@ describe "repositories/show.html.erb" do
     @repository = assign(:repository, stub_model(Repository,
       :name => "",
       :user_id => "",
-      :type => "",
+      :type_id => "",
       :fork_by => ""
     ))
   end

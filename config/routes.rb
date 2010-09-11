@@ -1,4 +1,22 @@
 GithubAchievement::Application.routes.draw do
+  resources :pull_commits
+
+  resources :pull_requests
+
+  resources :comments
+
+  resources :issue_statuses
+
+  resources :issues
+
+  resources :watchings
+
+  resources :followings
+
+  resources :commit_notes
+
+  resources :commits
+
   resources :repository_types
 
   resources :repositories

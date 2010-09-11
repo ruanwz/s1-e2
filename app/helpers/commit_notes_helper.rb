@@ -1,0 +1,2 @@
+module CommitNotesHelper
+end

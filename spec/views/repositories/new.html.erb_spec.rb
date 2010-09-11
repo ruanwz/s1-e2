@@ -6,7 +6,7 @@ describe "repositories/new.html.erb" do
       :new_record? => true,
       :name => "",
       :user_id => "",
-      :type => "",
+      :type_id => "",
       :fork_by => ""
     ))
   end
@@ -17,7 +17,7 @@ describe "repositories/new.html.erb" do
     rendered.should have_selector("form", :action => repositories_path, :method => "post") do |form|
       form.should have_selector("input#repository_name", :name => "repository[name]")
       form.should have_selector("input#repository_user_id", :name => "repository[user_id]")
-      form.should have_selector("input#repository_type", :name => "repository[type]")
+      form.should have_selector("input#repository_type_id", :name => "repository[type_id]")
       form.should have_selector("input#repository_fork_by", :name => "repository[fork_by]")
     end
   end

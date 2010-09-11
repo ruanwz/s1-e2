@@ -10,12 +10,75 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100911145731) do
+ActiveRecord::Schema.define(:version => 20100911152928) do
+
+  create_table "comments", :force => true do |t|
+    t.text     "content"
+    t.integer  "issue_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "commit_notes", :force => true do |t|
+    t.text     "note"
+    t.integer  "commit_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "commits", :force => true do |t|
+    t.text     "message"
+    t.string   "hash_index"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "followings", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "follower"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "issue_statuses", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "issues", :force => true do |t|
+    t.integer  "repository_id"
+    t.integer  "user_id"
+    t.integer  "status_id"
+    t.text     "content"
+    t.integer  "closed_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pull_commits", :force => true do |t|
+    t.integer  "pull_request_id"
+    t.integer  "start_commit_id"
+    t.integer  "end_commit_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pull_requests", :force => true do |t|
+    t.text     "content"
+    t.integer  "source_repository_id"
+    t.integer  "target_repository_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "repositories", :force => true do |t|
     t.string   "name"
     t.integer  "user_id"
-    t.integer  "type"
+    t.integer  "type_id"
     t.integer  "fork_by"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -30,6 +93,13 @@ ActiveRecord::Schema.define(:version => 20100911145731) do
   create_table "users", :force => true do |t|
     t.string   "username"
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "watchings", :force => true do |t|
+    t.integer  "repository_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Content:</b>
+  <%= @pull_request.content %>
+</p>
+
+<p>
+  <b>Source repository:</b>
+  <%= @pull_request.source_repository_id %>
+</p>
+
+<p>
+  <b>Target repository:</b>
+  <%= @pull_request.target_repository_id %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @pull_request.user_id %>
+</p>
+
+<p>
+  <b>Created at:</b>
+  <%= @pull_request.created_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_pull_request_path(@pull_request) %> |
+<%= link_to 'Back', pull_requests_path %>
