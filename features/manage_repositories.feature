@@ -6,14 +6,14 @@ Feature: Manage repositories
   Scenario: Register new repository
     Given I am on the new repository page
     When I fill in "Name" with "name 1"
-    And I fill in "User" with "user_id 1"
-    And I fill in "Type" with "type 1"
-    And I fill in "Fork by" with "fork_by 1"
+    And I fill in "User" with "david"
+    And I fill in "Type" with "1"
+    And I fill in "Fork by" with "1"
     And I press "Create"
     Then I should see "name 1"
-    And I should see "user_id 1"
-    And I should see "type 1"
-    And I should see "fork_by 1"
+    And I should see "david"
+    And I should see "1"
+    And I should see "1"
 
   # Rails generates Delete links that use Javascript to pop up a confirmation
   # dialog and then do a HTTP POST request (emulated DELETE request).
@@ -41,13 +41,13 @@ Feature: Manage repositories
   Scenario: Delete repository
     Given the following repositories:
       |name|user_id|type|fork_by|
-      |name 1|user_id 1|type 1|fork_by 1|
-      |name 2|user_id 2|type 2|fork_by 2|
-      |name 3|user_id 3|type 3|fork_by 3|
-      |name 4|user_id 4|type 4|fork_by 4|
+      |name 1|1|1|1|
+      |name 2|2|2|2|
+      |name 3|3|3|3|
+      |name 4|4|4|4|
     When I delete the 3rd repository
     Then I should see the following repositories:
       |Name|User|Type|Fork by|
-      |name 1|user_id 1|type 1|fork_by 1|
-      |name 2|user_id 2|type 2|fork_by 2|
-      |name 4|user_id 4|type 4|fork_by 4|
+      |name 1|1|1|1|
+      |name 2|2|2|2|
+      |name 4|4|4|4|

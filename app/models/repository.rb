@@ -4,6 +4,7 @@ class Repository < ActiveRecord::Base
   belongs_to :fork_by, :class_name=>'Repository', :foreign_key => 'fork_by'
   has_many :commits
   has_many :watchings
+  has_many :issues
 
   has_many :watchers, :through => :watchings, :source => :user
 end

@@ -15,9 +15,9 @@
 <% @repositories.each do |repository| %>
   <tr>
     <td><%= repository.name %></td>
-    <td><%= repository.user_id %></td>
-    <td><%= repository.type_id %></td>
-    <td><%= repository.fork_by %></td>
+    <td><%= repository.user.username %></td>
+    <td><%= repository.repository_type.name %></td>
+    <td><%= repository.fork_by ? repository.fork_by.name : 'na' %></td>
     <td><%= repository.created_at %></td>
     <td><%= link_to 'Show', repository %></td>
     <td><%= link_to 'Edit', edit_repository_path(repository) %></td>
