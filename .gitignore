@@ -2,3 +2,7 @@
 db/*.sqlite3
 log/*.log
 tmp/**/*
+db.sql
+.*.swp
+**/.*.swp
+models.png
