@@ -3,6 +3,9 @@
 <table>
   <tr>
     <th>Message</th>
+    <th>Username</th>
+    <th>Repository</th>
+    <th>Parent_id</th>
     <th></th>
     <th></th>
     <th></th>
@@ -11,6 +14,9 @@
 <% @commits.each do |commit| %>
   <tr>
     <td><%= commit.message %></td>
+    <td><%= commit.user.username %></td>
+    <td><%= commit.repository.name %></td>
+    <td><%= commit.parent_id || 'na' %></td>
     <td><%= link_to 'Show', commit %></td>
     <td><%= link_to 'Edit', edit_commit_path(commit) %></td>
     <td><%= link_to 'Destroy', commit, :confirm => 'Are you sure?', :method => :delete %></td>
