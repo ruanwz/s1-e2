@@ -32,6 +32,18 @@ class User
   def <<(commit)
     @commits << commit
   end
+  def delete_repository (repository)
+    if repository.owner == self
+      repository.owner = nil
+      @repositories.delete repository
+      repository.commits.each do |c|
+        c.author.delete_commit c
+      end
+    end
+  end
+  def delete_commit (c)
+    @commits.delete c
+  end
 end
 class Comment
   attr_accessor :author, :commit
