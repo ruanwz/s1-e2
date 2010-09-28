@@ -80,3 +80,4 @@ badges_test.rb
 To run the test, just type 'ruby badges_test.rb' under lib directory
 
 There are 2 types of badges in this project: Commit and Repository. The Commit type is static badge, and the Repository type is dynamic badge. Each type has 3 levels: Bronze, Silver and Gold.
+
